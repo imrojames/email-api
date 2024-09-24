@@ -19,7 +19,7 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  'POST /mails' : {
+  'POST /sendemail' : {
     controller: 'SendEmailController',
     action: 'email'
   }
