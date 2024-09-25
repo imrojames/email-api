@@ -24,7 +24,7 @@ module.exports = {
       from: process.env.EMAIL_USER,
       to: to,
       subject: subject,
-      text: `${text} \n \n ${name} \n Client Name \n ${to}`
+      text: `${text} \n \n ${name} \n Client Name \n ${to}` // Display in email format
     };
 
     try {
