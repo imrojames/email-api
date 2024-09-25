@@ -1,7 +1,7 @@
 const nodemailer = require('nodemailer');
 
 module.exports = {
-  sendMail: async function (to, subject, text) {
+  sendMail: async function (to, name, subject, text) {
     // Create a transporter object using SMTP transport settings
     let transporter = nodemailer.createTransport({
       // using mailtrap email testing
@@ -24,7 +24,7 @@ module.exports = {
       from: process.env.EMAIL_USER,
       to: to,
       subject: subject,
-      text: text
+      text: `${text} \n \n ${name} \n Client Name \n ${to}`
     };
 
     try {
