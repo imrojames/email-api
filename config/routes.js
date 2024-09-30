@@ -19,6 +19,10 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
+  'GET /health' : {
+    controller: 'HealthController',
+    action: 'HealthCheck'
+  },
   'POST /sendemail' : {
     controller: 'SendEmailController',
     action: 'email'
