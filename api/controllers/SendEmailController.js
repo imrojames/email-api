@@ -3,14 +3,22 @@
 module.exports = {
   email: async function (req, res) {
     try {
-      const {email, name, subject, text} = req.body;
+      const {email, name, subject, text, link, code} = req.body;
 
-      await EmailService.sendMail(
-        email,
-        name,
-        subject,
-        text
-      );
+      if (name) {
+        await EmailService.sendMail(
+          email,
+          name,
+          subject,
+          text,
+          link,
+          code
+        );
+      } else {
+        return res.json({
+          error: "Name is required."
+        })
+      }
 
       return res.status(200).json({message: 'Email sent!'});
     } catch (err) {
