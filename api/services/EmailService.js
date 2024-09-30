@@ -1,17 +1,9 @@
 const nodemailer = require('nodemailer');
 
 module.exports = {
-  sendMail: async function (to, name, subject, text) {
+  sendMail: async function (to, name, subject, text, link, code) {
     // Create a transporter object using SMTP transport settings
     let transporter = nodemailer.createTransport({
-      // using mailtrap email testing
-      // host: "sandbox.smtp.mailtrap.io",
-      // port: 2525,
-      // auth: {
-      //   user: "5bba6b2ea45819",
-      //   pass: "a9f6af2337461f"
-      // }
-
       service: "gmail",
       auth: {
         user: process.env.EMAIL_USER, // your Gmail address
@@ -24,7 +16,7 @@ module.exports = {
       from: process.env.EMAIL_USER,
       to: to,
       subject: subject,
-      text: `${text} \n \n ${name} \n Client Name \n ${to}` // Display in email format
+      text: `${text} \n ${link ? link : ""} \n ${code ? code : ""} \n \n ${name ? name : 'No name'} \n Client Name \n ${to}` // Display in email format
     };
 
     try {
