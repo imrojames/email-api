@@ -25,10 +25,12 @@ Note:  Generators are usually run using the globally-installed `sails` CLI (comm
 -->
 ### API Endpoint
 + POST '/sendemail' - To send an email.
++ Live api endpoint https://email-api-production.up.railway.app/sendemail
 ```json
 {
 	"email": "test@gmail.com",
 	"subject": "Test Email",
-	"text": "This a test eamil using API endpoint"
+	"text": "This a test eamil using API endpoint",
+  "name": "Your_name"
 }
 ```
