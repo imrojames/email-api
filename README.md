@@ -29,7 +29,7 @@ Note:  Generators are usually run using the globally-installed `sails` CLI (comm
 + Health Checkopint https://email-api-production.up.railway.app/health
 ```json
 {
-	"email": "binoyarojames@gmail.com",
+	"email": "youremail@gmail.com",
 	"subject": "Test Email from live api",
 	"text": "This is a test email from live api endpoint",
 	"name": "Rojames Binoya"
